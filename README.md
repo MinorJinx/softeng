@@ -1,4 +1,4 @@
-# Individual Project CPSC 4373 - Jeremy Reynolds
+# CPSC 4373: Individual Project - Jeremy Reynolds
 
 This login/registration application is very simple in execution.
 
