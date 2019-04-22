@@ -14,8 +14,8 @@ The project was created using a blank Maven template.
 
 Commands to build and run:
 ```
-mvn -f /projects/Login1 clean install 
-cp /projects/Login1/target/*.war $TOMCAT_HOME/webapps/ROOT.war 
+mvn -f /projects/Registration clean install 
+cp /projects/Registration/target/*.war $TOMCAT_HOME/webapps/ROOT.war 
 $TOMCAT_HOME/bin/catalina.sh run 2>&1
 ```
 Using server:
