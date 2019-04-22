@@ -34,7 +34,7 @@ password
 create database softeng;
 use softeng;
 ```
-Finally create the table:
+#### Finally create the table:
 ```
 CREATE TABLE `USERS` (
 	`id` INT(10) NOT NULL AUTO_INCREMENT,
@@ -48,10 +48,6 @@ CREATE TABLE `USERS` (
 	PRIMARY KEY (`id`)
 );
 ```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Built With
 * [Codenvy](https://codenvy.io/) - Online IDE Manager
