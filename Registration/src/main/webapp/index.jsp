@@ -35,6 +35,32 @@
 </html><br>
 <%@ page import="java.sql.*"%>
 <%
+    Connection cn = null;
+	ResultSet rs = null;
+    java.sql.Connection con1;
+    Class.forName("com.mysql.jdbc.Driver");
+    cn = DriverManager.getConnection("jdbc:mysql://db:3306/", "root", "password");
+    String dbName = "softeng";
+    
+    if(cn != null){	
+		rs = cn.getMetaData().getCatalogs();
+
+		while(rs.next()){
+			String catalogs = rs.getString(1);
+			
+			if(dbName.equals(catalogs)){
+				System.out.println("the database "+dbName+" exists");
+			}
+			else{
+        	    Statement s1 = cn.createStatement();
+                int Result1 = s1.executeUpdate("CREATE DATABASE IF NOT EXISTS "+dbName);
+                Statement s2 = cn.createStatement();
+                int Result2 = s2.executeUpdate("CREATE TABLE IF NOT EXISTS softeng.`USERS` (`id` INT(10) NOT NULL AUTO_INCREMENT,`first_name` VARCHAR(45) NOT NULL,`last_name` VARCHAR(45) NOT NULL,`username` VARCHAR(45) NOT NULL,`password` VARCHAR(45) NOT NULL,`question` VARCHAR(45) NOT NULL,`answer` VARCHAR(45) NOT NULL,`regdate` DATE NOT NULL,PRIMARY KEY (`id`));");
+        	}
+		}
+	}
+%>
+<%
     String uname = request.getParameter("username");
     String pword = request.getParameter("password");
     String chk = request.getParameter("a");
@@ -45,7 +71,6 @@
         con = DriverManager.getConnection("jdbc:mysql://db:3306/softeng", "root", "password");
         
         PreparedStatement pstatement = null;
-        int updateQuery = 0;
         
         String queryString = "SELECT * FROM USERS WHERE username = ? and password = ?";
         
