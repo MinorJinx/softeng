@@ -6,7 +6,7 @@ Since no password hashing/salting was done it is very insecure and is also susce
 
 ## Getting Started
 
-Using Codenvy I created a new workspace with the double stack (dev-machine, db).
+Using Codenvy I created a new workspace with the double Java-MySQL (dev-machine, db).
 
 The project was created using a blank Maven template.
 
@@ -23,7 +23,7 @@ Using server:
 http://${server.port.8080}
 ```
 
-#### Commands to create MySql Database:
+#### Commands to create MySQL Database:
 
 Click to the right of 'db' in the bottom Processes pane.
 
@@ -52,7 +52,7 @@ CREATE TABLE `USERS` (
 ## Built With
 * [Codenvy](https://codenvy.io/) - Online IDE Manager
 * [Maven](https://maven.apache.org/) - Dependency Management
-* [MySql](https://www.mysql.com/) - Database
+* [MySQL](https://www.mysql.com/) - Database
 
 ## Authors
 
